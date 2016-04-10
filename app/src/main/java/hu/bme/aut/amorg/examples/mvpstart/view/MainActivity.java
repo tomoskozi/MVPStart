@@ -1,17 +1,21 @@
-package hu.bme.aut.amorg.examples.mvpstart;
+package hu.bme.aut.amorg.examples.mvpstart.view;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import javax.inject.Inject;
+
+import hu.bme.aut.amorg.examples.mvpstart.MVPApplication;
+import hu.bme.aut.amorg.examples.mvpstart.R;
+import hu.bme.aut.amorg.examples.mvpstart.presenter.MainPresenter;
 
 public class MainActivity extends AppCompatActivity implements MainView {
 
@@ -40,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
             @Override
             public void onClick(View v) {
-                mainPresenter.printThis("Muhaha!");
+                mainPresenter.doStuff();
             }
         });
     }

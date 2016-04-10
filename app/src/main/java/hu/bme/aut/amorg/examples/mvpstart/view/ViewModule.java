@@ -1,4 +1,4 @@
-package hu.bme.aut.amorg.examples.mvpstart;
+package hu.bme.aut.amorg.examples.mvpstart.view;
 
 import android.content.Context;
 
@@ -6,15 +6,16 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import hu.bme.aut.amorg.examples.mvpstart.presenter.MainPresenter;
 
 /**
  * Created by Máté on 10/04/2016.
  */
 @Module
-public class UIModule {
+public class ViewModule {
     private Context context;
 
-    public UIModule(Context context) {
+    public ViewModule(Context context) {
         this.context = context;
     }
 
@@ -25,7 +26,7 @@ public class UIModule {
 
     @Provides
     @Singleton
-    public MainPresenter provideMainPresenter() {
+    public MainPresenter getMainPresenter() {
         return new MainPresenter();
     }
 }
